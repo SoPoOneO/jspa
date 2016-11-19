@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jspa</title>
+</head>
+<body>
+    <button onClick="updateNode()">update Node</button>
+    <div id="container"></div>
+    <script src="/js/jspa.js"></script>
+    <script>
+
+        var data = {counter: 1, name: 'johnny'};
+
+        var render = function(data){
+            return "Hello " + data.name + ". Welcome home " + data.counter + "!";
+        }
+
+        var hello_message = jspa.create('container', data, render);
+
+        function updateNode(){
+
+            hello_message.update({counter: ++data.counter});
+        }
+
+
+    </script>
+</body>
+</html>
